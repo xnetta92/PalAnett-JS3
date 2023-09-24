@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS3_3feladat</title>
+</head>
+
+<body>
+    <h1>Köszöntés</h1>
+
+    <button onclick="koszontes()">Köszöntés</button>
+
+    <script>
+        function koszontes() {
+            const ora = new Date().getHours();
+            let udvozlet;
+
+            if (ora >= 5 && ora < 12) {
+                udvozlet = "Jó reggelt!";
+            } else if (ora >= 12 && ora < 18) {
+                udvozlet = "Jó napot!";
+            } else if (ora >= 18 && ora < 24) {
+                udvozlet = "Jó estét!";
+            } else {
+                udvozlet = "Te még fent vagy?! Menj aludni!"
+            }
+
+            alert(udvozlet);
+        }
+    </script>
+</body>
+
+</html>

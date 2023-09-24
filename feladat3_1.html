@@ -5,28 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS3_1feladat</title>
-    <style>
-        #console {
-            font-family: monospace;
-            font-size: 12pt;
-            background-color: black;
-            color: yellow;
-            float: left;
-            top: 0;
-            left: 0;
-            padding: 3px;
-            width: 100%;
-            min-height: 2.5em;
-            position: absolute;
-            /*display: none;*/
-        }
-    </style>
 </head>
 
 <body>
     <h1>Gondoltam egy szamra</h1>
     <p id="message">Adj meg egy szamot</p>
-    <form id="myForm" name="talaldKi" action="test.html" method="POST">
+    <form id="myForm" name="talaldKi" action="feladat3_1.html" method="POST">
         <input id="tipp" name="tipp" type="number">
         <button id="submit">tipp</button>
     </form>
@@ -38,34 +22,15 @@
                 event.preventDefault();
 
                 var tipp = urlap["tipp"].value;
-
-                /*function initLogger() {
-                    var console = document.createElement('div');
-                    console.style.cssText = 'font-family: monospace;font-size: 12pt;background-color: black;color: yellow;float:left;top: 0;left: 0;padding: 3px;width: 100%;min-height: 2.5em;position: absolute;display:block;';
-                    document.body.appendChild(console);
-                }
-                initLogger();
-                */
-
-                function logger(msg) {
-                    document.getElementById("console").innerHTML = msg
-                }
-
-
-
+        
                 function vizsgalat() {
-                    //   document.write(tipp);
-                    //   document.getElementById("message").innerHTML = tipp;
-
-                    if (tipp < x) {
-                        document.getElementById("message").innerHTML = "kisebb";
-                        logger(tipp + " < " + x);
-                    } else if (tipp > x) {
+                   
+                    if (tipp > x) {
+                        document.getElementById("message").innerHTML = "KISEBB";
+                    } else if (tipp < x) {
                         document.getElementById("message").innerHTML = "NAGYOBB";
-                        logger(tipp + " > " + x);
                     } else {
-                        document.getElementById("message").innerHTML = "Talalt";
-                        logger(tipp + " = " + x);
+                        document.getElementById("message").innerHTML = "TALÁLT!";
                     }
 
                 }
@@ -73,8 +38,6 @@
             });
         });
     </script>
-
-    <div id="console">debug console</div>
 </body>
 
 </html>
